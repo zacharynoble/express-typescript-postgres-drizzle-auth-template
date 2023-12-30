@@ -1,0 +1,16 @@
+{
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "prettier.printWidth": 120,
+    "search.exclude": {
+        "package-lock.json": true
+    },
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": { "source.addMissingImports": "always", "source.fixAll.eslint": "always" },
+    "[json][jsonc][yaml][html][css]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.ignorePath": ".gitignore"
+}

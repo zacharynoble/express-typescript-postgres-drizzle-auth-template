@@ -1,0 +1,99 @@
+{
+    "version": "5",
+    "dialect": "pg",
+    "id": "d3fbd70c-29a8-4ede-8103-912b119a2648",
+    "prevId": "00000000-0000-0000-0000-000000000000",
+    "tables": {
+        "posts": {
+            "name": "posts",
+            "schema": "",
+            "columns": {
+                "id": {
+                    "name": "id",
+                    "type": "serial",
+                    "primaryKey": true,
+                    "notNull": true
+                },
+                "title": {
+                    "name": "title",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "body": {
+                    "name": "body",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "user_id": {
+                    "name": "user_id",
+                    "type": "integer",
+                    "primaryKey": false,
+                    "notNull": false
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {
+                "posts_user_id_users_id_fk": {
+                    "name": "posts_user_id_users_id_fk",
+                    "tableFrom": "posts",
+                    "tableTo": "users",
+                    "columnsFrom": ["user_id"],
+                    "columnsTo": ["id"],
+                    "onDelete": "no action",
+                    "onUpdate": "no action"
+                }
+            },
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {}
+        },
+        "users": {
+            "name": "users",
+            "schema": "",
+            "columns": {
+                "id": {
+                    "name": "id",
+                    "type": "serial",
+                    "primaryKey": true,
+                    "notNull": true
+                },
+                "name": {
+                    "name": "name",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "email": {
+                    "name": "email",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": true
+                },
+                "password_hash": {
+                    "name": "password_hash",
+                    "type": "text",
+                    "primaryKey": false,
+                    "notNull": true
+                }
+            },
+            "indexes": {},
+            "foreignKeys": {},
+            "compositePrimaryKeys": {},
+            "uniqueConstraints": {
+                "users_email_unique": {
+                    "name": "users_email_unique",
+                    "nullsNotDistinct": false,
+                    "columns": ["email"]
+                }
+            }
+        }
+    },
+    "enums": {},
+    "schemas": {},
+    "_meta": {
+        "schemas": {},
+        "tables": {},
+        "columns": {}
+    }
+}
